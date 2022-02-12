@@ -76,7 +76,7 @@ class MongoPlugin(object):
 
     def get_mongo(self):
         """Return the mongo connection from the environment."""
-        if self.mongo_db:
+        if self.mongo_db is not None:
             return self.mongo_db
 
         if len(self.uri_params['nodelist']) > 1 and MongoReplicaSetClient:
